@@ -1,0 +1,145 @@
+/* Základní styly */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #2c3e50); /* Barevné pozadí */
+    color: #e0e0e0;
+    line-height: 1.8;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Menu */
+.futuristic-menu {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 2px solid #8a2be2;
+    z-index: 1000;
+}
+
+/* Left Menu */
+.left-menu {
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+/* Right Menu */
+.right-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-link {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    transition: 0.3s all;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+    .menu-link:hover {
+        background: #8a2be2;
+        color: #fff;
+        text-shadow: 0 0 10px #8a2be2;
+    }
+
+/* Texty sportù a O mì */
+.sport-text {
+    position: absolute;
+    top: 0;
+    width: 400px;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    border: 1px solid #8a2be2;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+    z-index: 1000;
+}
+
+.top-menu .sport-text {
+    top: 100%; /* Text vyjede dolù pro top menu */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.left-menu .sport-text {
+    left: 100%; /* Text vyjede doprava pro levé menu */
+}
+
+.right-menu .sport-text {
+    right: 100%; /* Text vyjede doleva pro pravé menu */
+}
+
+.menu-item:hover .sport-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sport-text h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    color: #8a2be2;
+    margin-bottom: 1rem;
+}
+
+.sport-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+/* CYCLING BACKGROUND */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Ensures it stays BEHIND content */
+    overflow: hidden;
+}
+
+.bg-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+    .bg-image.active {
+        opacity: 1;
+    }
+
+/* Remove original body gradient */
+body {
+    background: none !important;
+}
+
+.bg-image {
